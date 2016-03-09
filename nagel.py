@@ -8,6 +8,7 @@ if len(sys.argv) != 2:
     print("Usage: python pyTraffic.py module_with_config")
     exit()
 
+#Aqui se generan las distintas configuraciones
 config = importlib.import_module(sys.argv[1])
 
 random.seed(config.seed)
