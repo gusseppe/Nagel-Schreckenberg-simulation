@@ -10,7 +10,8 @@ class Road:
         # stats
         self.deadCars = 0 # cars that are gone
         self.updates = 0
-
+    
+    #Paralelizar
     def __updateCars(self, action):
         for lane in self.lanes:
             for entity in lane:
@@ -121,6 +122,7 @@ class Road:
         return len(self.lanes)
     def getCellCount(self):
         return self.getLength() * self.getLanesCount()
+        
     def getAvgCarSpeed(self):
         total = 0
         cars = 0

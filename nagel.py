@@ -4,6 +4,9 @@ from representation import Representation
 from simulationManager import SimulationManager
 from simulation.trafficGenerators import *
 
+#DataScience
+from datascience.datascience import *
+
 if len(sys.argv) != 2:
     print("Usage: python pyTraffic.py module_with_config")
     exit()
@@ -24,14 +27,24 @@ road = simulation.road.Road(config.lanes, config.length, speedLimits)
 simulation = SimulationManager(road, config.trafficGenerator, config.updateFrame)
 representation = Representation(screen, road, simulation)
 
+#[M]DataScience
+datascience = DataScience(config, road, simulation, representation)
+
+datascience.showParameters()
+#[M]Fin DataScience
+
 while simulation.running:
     for event in pygame.event.get():
         if event.type == pygame.KEYDOWN:
             simulation.processKey(event.key)
+            
     clock.tick_busy_loop(config.maxFps)
     dt = clock.get_time()
+    #Aqui aparecen los datos de la simulacion.
     simulation.update(dt)
     representation.draw(dt * simulation.timeFactor)
+    datascience.update(dt * simulation.timeFactor)
+
     pygame.display.flip()
 
 print("Goodbye")

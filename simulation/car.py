@@ -20,6 +20,7 @@ class Car:
         return self.pos
 
     def updateX(self):
+        """Regla 2,3,4 de NaSh"""
         self.velocity = self.calcNewVelocity()
 
         if self.velocity > 0 and random.random() <= Car.slowDownProbability:
@@ -29,10 +30,12 @@ class Car:
         return self.pos
 
     def calcNewVelocity(self):
+        """Regla 1 de NaSh"""
         return min(self.velocity + 1, self.road.getMaxSpeedAt(self.pos))
 
     def willingToChangeUp(self):
         return self.road.possibleLaneChangeUp(self.pos) and self.__willingToChangeLane(self.pos[1], self.pos[1] - 1)
+        
     def willingToChangeDown(self):
         return self.road.possibleLaneChangeDown(self.pos) and self.__willingToChangeLane(self.pos[1], self.pos[1] + 1)
 
