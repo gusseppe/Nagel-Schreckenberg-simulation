@@ -1,6 +1,6 @@
 # Nagel Schreckenberg simulation
 
-Simulacion basada en automata celulares usando el modelo Nagel Schreckenberg.
+Este repositorio es un fork de la simulacion basada en automata celulares usando el modelo Nagel Schreckenberg realizada por morethanoneanimal. A partir de dicha simulacion se piensa realizar la paralelizacion del codigo, la adicion de un paquete de analisis de datos y de prediccion.
 
 Nuevas caracteristicas:
 
