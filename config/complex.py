@@ -10,7 +10,7 @@ updateFrame = 500
 # seed for pseudo random generator
 seed = None
 
-lanes = 5
+lanes = 3
 # lenght of the road
 length = 168
 
@@ -25,7 +25,7 @@ l = 50
 # it ticks are set to 0 speed limit is active forever
 # active - is speed limit active from the first iteration or not. Beware - if ticks are set to 0 and 'active' to False it'll be useless
 speedLimits = [
-        SpeedLimit(range=((0, 2), (l, 2)), limit=0, ticks=0), # this is the barrier between two roads at the beginning.
+        SpeedLimit(range=((0, 1), (l, 1)), limit=0, ticks=0), # this is the barrier between two roads at the beginning.
         SpeedLimit(range=((l, 0), (l, 1)), limit=0, ticks=t, active=False), # top lights
         SpeedLimit(range=((l, 3), (l, 4)), limit=0, ticks=t) # bottom lights
         ]

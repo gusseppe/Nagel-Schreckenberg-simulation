@@ -1,0 +1,18 @@
+{
+    "laneChangeProbability": 0.5,
+    "slowDownProbability": 0.3,
+    "ticks": 0,
+    "carPerUpdate": 2,
+    "lanes": 3,
+    "xPos": [
+        0,
+        50
+    ],
+    "lanesPos": [
+        1,
+        1
+    ],
+    "maxSpeed": 5.0,
+    "active": true,
+    "lenght": 168
+}

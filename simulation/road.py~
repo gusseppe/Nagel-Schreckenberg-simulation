@@ -10,7 +10,8 @@ class Road:
         # stats
         self.deadCars = 0 # cars that are gone
         self.updates = 0
-
+    
+    #Paralelizar
     def __updateCars(self, action):
         for lane in self.lanes:
             for entity in lane:
@@ -87,8 +88,10 @@ class Road:
 
     def possibleLaneChangeUp(self, pos):
         return self.__possibleLaneChange(pos, pos[1]-1)
+
     def possibleLaneChangeDown(self, pos):
         return self.__possibleLaneChange(pos, pos[1]+1)
+
     def __possibleLaneChange(self, pos, destLane):
         if not self.inBounds( (0, destLane) ) or self.lanes[destLane][pos[0]] != None: return False
         else:
@@ -99,15 +102,26 @@ class Road:
                 return self.lanes[oneMoreLane][pos[0]] == None
 
     def inBounds(self, pos):
+        """ Todo carro debe estar dentro de los limites permitidos \
+                el x maximo es la longitud de la pista, \
+                el y maximo es el ultimo carril """
+
         return pos[0] >= 0 and pos[1] >= 0 and pos[0] < self.getLength() and pos[1] < self.getLanesCount()
 
     def clearAt(self, pos):
+        """ Limpiar una posicion de la pista, es decir, borrar una carro  """
+
         self.lanes[pos[1]][pos[0]] = None
 
     def placeObjects(self, entities):
+        """ Ubicar todo los carros en la pista """
+
         return all(self.placeObject(entity) for entity in entities)
 
     def placeObject(self, entity):
+        """ Ubicar el carro en la pista, cada carro tiene su posicion \
+                posicion en X y posicion en Y (numero de carril) """
+
         if (not self.inBounds(entity.pos)
                 or self.lanes[entity.pos[1]][entity.pos[0]] != None
                 or self.getSpeedLimitAt(entity.pos) == 0): return False
@@ -116,12 +130,25 @@ class Road:
             return True
 
     def getLength(self):
+        """ Calcular la longitud de la pista """
+
         return len(self.lanes[0])
+
     def getLanesCount(self):
+        """ Calcular la cantidad de carriles """
+
         return len(self.lanes)
+
     def getCellCount(self):
+        """ La longitud de la celda es la longitud de la pista\
+                por la cantidad de carriles """
+
         return self.getLength() * self.getLanesCount()
+        
     def getAvgCarSpeed(self):
+        """ Iterar a traves de todos los carros y sumar sus velocidades, \
+        luego dividir entre el numero de carros """
+
         total = 0
         cars = 0
         for lane in self.lanes:
@@ -132,6 +159,8 @@ class Road:
         return (cars, total/cars if cars > 0 else 0)
 
     def generateEmptyLanes(lanesCount, length):
+        """ Generar la pista vacia, con todos su carriles"""
+
         lanes = []
         for x in range(lanesCount):
             lanes.append( [None] * length )

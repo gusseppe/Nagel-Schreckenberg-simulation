@@ -11,9 +11,12 @@ seed = None
 lanes = 4
 length = 190
 
-maxSpeed = 7
+maxSpeed = 5
 maxLength = 1000
 
-speedLimits = []
+speedLimits = [ SpeedLimit(range=((50, 2), (110,2)), limit=0, ticks=0),
+                SpeedLimit(range=((150, 2), (170,2)), limit=0, ticks=0)
+              ]
+
 trafficGenerator = SimpleTrafficGenerator(10)
 slowDownProbability, laneChangeProbability = 0.3, 0.2

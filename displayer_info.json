@@ -1,9 +1,0 @@
-{
-    "speedSimulation": 1.0,
-    "cells": 200,
-    "avg_speed_cars": 5.0,
-    "congestion": 6.0,
-    "deadcars": 4,
-    "updates": 27,
-    "totalcars": 12
-}

@@ -32,14 +32,14 @@ class Collect():
             print('No tiene maxLength')
 
 
-        #try:
+        try:
 
             #parameters['lanesPos'] = self.config.speedLimits[0].lanes 
             #parameters['xPos'] = self.config.speedLimits[0].xPos 
             #parameters['ticks'] = self.config.speedLimits[0].ticks 
             #parameters['active'] = self.config.speedLimits[0].active 
-        #except IndexError:
-        #    pass
+        except IndexError:
+            pass
 
         parameters['slowDownProbability'] = self.config.slowDownProbability
         parameters['laneChangeProbability'] = self.config.laneChangeProbability

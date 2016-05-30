@@ -8,12 +8,15 @@ updateFrame = 500
 
 seed = None
 
-lanes = 15
+lanes = 4
 length = 190
 
 maxSpeed = 5
 maxLength = 1000
 
-speedLimits = [ SpeedLimit(range=((50, 6), (100,6)), limit=0, ticks=0)]
+speedLimits = [ SpeedLimit(range=((50, 2), (90,2)), limit=0, ticks=0),
+                SpeedLimit(range=((150, 2), (170,2)), limit=0, ticks=0)
+              ]
+
 trafficGenerator = SimpleTrafficGenerator(10)
 slowDownProbability, laneChangeProbability = 0.3, 0.2

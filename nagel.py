@@ -30,7 +30,7 @@ representation = Representation(screen, road, simulation)
 #[M]DataScience
 datascience = DataScience(config, road, simulation, representation)
 
-datascience.showParameters()
+datascience.writeInput()
 #[M]Fin DataScience
 
 while simulation.running:

@@ -1,0 +1,9 @@
+{
+    "maxLength": 1000,
+    "maxSpeed": 5.0,
+    "lenght": 190,
+    "carPerUpdate": 10,
+    "slowDownProbability": 0.3,
+    "laneChangeProbability": 0.2,
+    "lanes": 4
+}
