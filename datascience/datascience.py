@@ -19,7 +19,7 @@ class DataScience():
     def writeInput(self):
         """ Guardar los parametros de entrada"""
 
-        self.collect.writeInput()
+        #self.collect.writeInput()
 
     def writeOutput(self):
         """ Guardar los parametros de salida"""
@@ -36,7 +36,7 @@ class DataScience():
         """ Recaudar los parametros de salida"""
         self.acc += dt
         if self.acc >= self.updateFrame:
-            self.collect.showRoad()
+            #self.collect.showRoad()
             self.collect.writeOutput()
             #self.collect.showSpeedLimits()
         self.acc = self.acc % (self.updateFrame + 0)

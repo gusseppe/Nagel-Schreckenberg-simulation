@@ -17,6 +17,6 @@ class SimpleTrafficGenerator():
         added = road.pushCarsRandomly(amount + self.queue)
         self.queue += (amount - added)
         
-        #print('queue : ' + str(self.queue))
+        print('queue : ' + str(self.queue))
 
 

@@ -9,14 +9,16 @@ updateFrame = 500
 seed = None
 
 lanes = 4
-length = 190
+length = 2200
 
 maxSpeed = 5
-maxLength = 1000
 
-speedLimits = [ SpeedLimit(range=((50, 2), (110,2)), limit=0, ticks=0),
-                SpeedLimit(range=((150, 2), (170,2)), limit=0, ticks=0)
+maxLength = speedLimits = [ 
+                SpeedLimit(range=((50, 1), (80,1)), limit=0, ticks=0),
+                SpeedLimit(range=((50, 2), (80,2)), limit=0, ticks=0),
+                SpeedLimit(range=((150, 2), (280,2)), limit=1, ticks=40),
+                SpeedLimit(range=((150, 3), (280,3)), limit=1, ticks=40)
               ]
 
-trafficGenerator = SimpleTrafficGenerator(10)
+trafficGenerator = SimpleTrafficGenerator(7)
 slowDownProbability, laneChangeProbability = 0.3, 0.2
